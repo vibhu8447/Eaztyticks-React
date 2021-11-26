@@ -1,0 +1,66 @@
+{
+    "name": "ReactJS Chrome Extension",
+    "description": "Using ReactJS to build a Chrome Extension",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "icons": {
+        "128": "./icon.png"
+    },
+    "permissions": ["tabs", "storage", "https://web.whatsapp.com/*"],
+    "background": {
+        "scripts": ["./background.js"],
+        "persistance": true
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://web.whatsapp.com/*"],
+          "js": ["assets/js/content.js"],
+          "css" : ["assets/css/content.css"]
+        },
+        {
+          "matches": ["https://web.whatsapp.com/*"],
+          "js": ["inject_script.js"]
+        }
+      ],
+    "options_page": "./options.html",
+    "browser_action": {
+        "default_title": "Eazybe",
+    "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        "popup.html",
+        "infoTab.html",
+        "assets/js/datetime.js",
+        "assets/js/analytics.js",
+        "assets/css/datetime.css",
+        "datetime.html",
+        "assets/css/popup.css",
+        "assets/img/premium.png",
+        "assets/img/update.png",
+        "assets/js/wapi.js",
+        "assets/js/gscript.js",
+        "assets/css/bootstrap.min.css",
+        "assets/js/mid.js",
+        "whatsAppIcon.svg",
+        "demouser.png",
+        "broadcast.svg",
+        "assets/icons/star-icon.png",
+        "assets/icons/best.png",
+        "assets/icons/bin_white.png",
+        "assets/icons/bin_red.png",
+        "check.svg",
+        "calender.svg",
+        "filter.svg",
+        "plus.png",
+        "upload.svg",
+        "edit-solid.svg",
+        "expanded.html",
+        "/assets/icons/icon.png",
+        "foreground.bundle.js",
+        "navbar.bundle.js"
+      ],
+      "icons": {
+        "128": "/assets/icons/icon.png"
+      },
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self' script-src 'self' https://ssl.google-analytics.com; object-src 'self' "
+}
